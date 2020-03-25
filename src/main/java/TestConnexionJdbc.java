@@ -1,7 +1,6 @@
 /**
  * 
  */
-package fr.diginamic.props;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +12,7 @@ import java.util.ResourceBundle;
  * @author boukh
  *
  */
-public class TestConfiguration {
+public class TestConnexionJdbc {
 
 	/**
 	 * @param args
@@ -36,15 +35,6 @@ public class TestConfiguration {
 			throw new Exception("Le driver JDBC " + driverName + " n'a pas été trouvé ", e);
 		}
 
-        Statement statement = connection.createStatement();
-
-        ResultSet resultSet = statement.executeQuery("select * from fournisseur");
-   
-   
-
-        // étape 5 => libération des ressources
-        resultSet.close();
-        statement.close();
         connection.close();
 
 	}
